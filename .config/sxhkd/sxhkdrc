@@ -29,11 +29,11 @@ super + c
 super + v
 	$TERMINAL -e nvim -c VimwikiIndex
 super + shift + a
-	$TERMINAL -e alsamixer; refbar
+	$TERMINAL -e pulsemixer; refbar
 super + shift + c
 	mpv --no-osc --no-input-default-bindings --input-conf=/dev/null --title='mpvfloat' /dev/video0
-super + shift + e
-	tutorialvids
+super + shift + r
+	refbar
 super + shift + w
 	$BROWSER
 super + shift + g
@@ -80,8 +80,8 @@ super + p
 super + shift + p
 	mpc pause; pauseallmpv
 # Changes to next/previous tracks
-super + {comma,period}
-	mpc {prev,next}
+#super + {comma,period}
+#	mpc {prev,next}
 # Restart track
 super + shift + less
 	mpc seek 0%
@@ -93,18 +93,18 @@ super + {_,shift +} bracketleft
 	mpc seek -{10,120}
 # Increase volume
 super + {equal,plus}
-	amixer sset Master {5,15}%+; refbar
+	pulsemixer --change-volume +{5,15}; refbar
 # Decrease volume
 super {_,shift +} + minus
-	amixer sset Master {5,15}%-; refbar
+	pulsemixer --change-volume -{5,15}; refbar
 super + shift + m
-	amixer sset Master toggle; refbar
+	pulsemixer --toggle-mute; refbar
 
 # Audiokeys
 XF86AudioMute
-	amixer sset Master toggle; refbar
+	pulsemixer --toggle-mute; refbar
 XF86Audio{Raise,Lower}Volume
-	amixer sset Master 5%{+,-}; refbar
+	pulsemixer --change-volume {+,-}5; refbar
 XF86Audio{Next,Prev}
 	mpc {next,prev}
 XF86Audio{Pause,Play,Stop}
@@ -149,7 +149,7 @@ super + F3
 super + F4
 	prompt 'Hibernate computer?' 'sudo -A zzz'
 super + F5
-	sudo sv restart wpa_supplicant
+	sudo sv restart NetworkManager
 # Start torrent daemon/open interface
 super + F6
 	torwrap
@@ -163,4 +163,4 @@ super + F8
 super + {F9,F10}
 	{dmenumount,dmenuumount}
 super + F12
-	$TERMINAL -e wpa_cli
+	networkmanager_dmenu

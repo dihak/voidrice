@@ -1,0 +1,10 @@
+calcurse/apts
+calcurse/todo
+mpd/database
+mpd/log
+mpd/pid
+mpd/state
+mpd/sticker.sql
+ncmpcpp/error.log
+nvim/autoload/*
+nvim/plugged/*

@@ -96,6 +96,9 @@ set clipboard=unnamedplus
 	vnoremap <C-c> "+y
 	map <C-p> "+P
 
+" Save file as sudo on files that require root permission
+	cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+
 " Enable Goyo by default for mutt writting
 	autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
 	autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo | set bg=light
@@ -110,4 +113,4 @@ set clipboard=unnamedplus
 " Update binds when sxhkdrc is updated.
 	autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
 " Update dwmbar when changed.
-	autocmd BufWritePost *dwmbar !killall dwmbar; setsid dwmbar &
+	autocmd BufWritePost *dwmbar !kill $(ps aux | grep 'sh' | grep 'dwmbar' | awk '{print $2}') & setsid dwmbar &
