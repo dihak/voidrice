@@ -8,7 +8,7 @@ export PATH="$PATH:$HOME/.local/bin/"
 # Default programs:
 export EDITOR="nvim"
 export TERMINAL="st"
-export BROWSER="tabbed -r 2 surf -e lmao"
+export BROWSER="google-chrome-stable"
 export READER="zathura"
 export FILE="lf"
 
