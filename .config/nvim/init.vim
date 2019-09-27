@@ -23,7 +23,7 @@ Plug 'tpope/vim-surround'
 Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
-set bg=light
+set bg=dark
 set go=a
 set mouse=a
 set nohlsearch
@@ -36,6 +36,9 @@ set clipboard=unnamedplus
 	syntax on
 	set encoding=utf-8
 	set number relativenumber
+" Solarized
+	let g:solarized_termtrans=1
+	colorscheme solarized
 " Text tab and indent
 	set smarttab
 	set shiftwidth=4
