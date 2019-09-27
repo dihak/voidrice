@@ -116,6 +116,12 @@ XF86AudioRecord
 XF86AudioMedia
 	$TERMINAL -e ncmpcpp
 
+# Brightness Keys
+XF86MonBrightnessDown
+	xbacklight -dec 15
+XF86MonBrightnessUp
+	xbacklight -inc 15
+
 XF86PowerOff
 	prompt "Shutdown computer?" "sudo -A shutdown -h now"
 XF86Calculator
