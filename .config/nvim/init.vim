@@ -19,6 +19,8 @@ Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'vifm/vifm.vim'
 Plug 'kovetskiy/sxhkd-vim'
+Plug 'tpope/vim-surround'
+Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
 set bg=light
@@ -34,6 +36,13 @@ set clipboard=unnamedplus
 	syntax on
 	set encoding=utf-8
 	set number relativenumber
+" Text tab and indent
+	set smarttab
+	set shiftwidth=4
+	set tabstop=4
+	set ai "Auto indent
+	set si "Smart indent
+	set wrap "Wrap lines
 " Enable autocompletion:
 	set wildmode=longest,list,full
 " Disables automatic commenting on newline:
