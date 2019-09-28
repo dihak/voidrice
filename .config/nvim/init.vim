@@ -21,6 +21,7 @@ Plug 'vifm/vifm.vim'
 Plug 'kovetskiy/sxhkd-vim'
 Plug 'tpope/vim-surround'
 Plug 'altercation/vim-colors-solarized'
+Plug 'mileszs/ack.vim'
 call plug#end()
 
 set bg=dark
@@ -50,6 +51,12 @@ set clipboard=unnamedplus
 	set wildmode=longest,list,full
 " Disables automatic commenting on newline:
 	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+" Turn persistent undo on
+	try
+		set undodir=/tmp/nvim/undodir
+		set undofile
+	catch
+	endtry
 
 " Goyo plugin makes text more readable when writing prose:
 	map <leader>f :Goyo \| set bg=light \| set linebreak<CR>
