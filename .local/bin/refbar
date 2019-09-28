@@ -5,7 +5,10 @@
 
 # Is Running
 isRunning=$(ps aux | grep 'sh' | grep 'dwmbar' | awk '{print $2}')
+echo $isRunning
 
 if [ "$isRunning" ]; then
 	kill -5 $isRunning
+else
+	/usr/bin/sh dwmbar &
 fi
