@@ -125,4 +125,4 @@ set clipboard=unnamedplus
 " Update binds when sxhkdrc is updated.
 	autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
 " Update dwmbar when changed.
-	autocmd BufWritePost *dwmbar !kill $(ps aux | grep 'sh' | grep 'dwmbar' | awk '{print $2}') & setsid dwmbar &
+	autocmd BufWritePost *dwmbar !kill $(ps aux | grep 'sh' | grep 'dwmbar' | awk '{print $2}') & dwmbar &
