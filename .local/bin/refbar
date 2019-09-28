@@ -2,12 +2,10 @@
 
 # Refresh the dwmbar.
 # Send SIGTRAP signal to dwmbar script, which will handle it with a trap.
-pkill -SIGTRAP dwmbar
 
-#kill -SIGTRAP $(ps aux | grep 'sh' | grep 'dwmbar' | awk '{print $2}')
+# Is Running
+isRunning=$(ps aux | grep 'sh' | grep 'dwmbar' | awk '{print $2}')
 
-#{
-#	kill -5 $(ps aux | grep 'sh' | grep 'dwmbar' | awk '{print $2}')
-#} || {
-#	dwmbar &
-#}
+if [ "$isRunning" ]; then
+	kill -5 $isRunning
+fi
