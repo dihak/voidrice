@@ -24,7 +24,7 @@ testweather() { \
 status() { \
 
 	# Get current mpd track filename or artist - title if possible.
-	mpc -f "[[%artist% - ]%title%]|[%file%]" 2>/dev/null | grep -v "volume:" | head -n 1 && echo "$delim"
+	mpc -f "[[%title% - ]%artist%]|[%file%]" 2>/dev/null | grep -v "volume:" | head -n 1 | cut -c1-30 && echo "$delim"
 
 	# If the weather report is current, show daily precipitation chance,
 	# low and high.  Don't even bother to understand this one unless you
