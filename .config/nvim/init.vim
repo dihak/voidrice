@@ -22,6 +22,7 @@ Plug 'kovetskiy/sxhkd-vim'
 Plug 'tpope/vim-surround'
 Plug 'altercation/vim-colors-solarized'
 Plug 'mileszs/ack.vim'
+Plug 'kien/ctrlp.vim'
 call plug#end()
 
 set bg=dark
@@ -133,3 +134,10 @@ set clipboard=unnamedplus
 	autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
 " Update dwmbar when changed.
 	autocmd BufWritePost *dwmbar !kill $(ps aux | grep 'sh' | grep 'dwmbar' | awk '{print $2}') & dwmbar &
+
+" Ctrl-p Plugin
+	let g:ctrlp_working_path_mode = 0
+	let g:ctrlp_map = '<c-f>'
+	map <leader>j :CtrlP<cr>
+	map <c-b> :CtrlPBuffer<cr>
+	let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee\|dist'
