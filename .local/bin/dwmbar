@@ -69,16 +69,20 @@ status() { \
 		echo "$delim"
 
 	# Will show all batteries with approximate icon for remaining power.
-	for x in /sys/class/power_supply/BAT?/capacity;
-	do
-	case "$(cat $x)" in
-		100|9[0-9])	echo "" ;;
-		8[0-9]|7[0-9])	echo "" ;;
-		6[0-9]|5[0-9])	echo "" ;;
-		4[0-9]|3[0-9])	echo "" ;;
-		*)		echo "" ;;
-	esac
-	done && echo "$(cat $x)%" && echo "$delim"
+	if [ "$(cat /sys/class/power_supply/BAT0/status)" = "Charging" ]; then
+		echo ""
+	else
+		case "$(cat /sys/class/power_supply/BAT0/capacity)" in
+			100|9[0-9])	echo "" ;;
+			8[0-9]|7[0-9])	echo "" ;;
+			6[0-9]|5[0-9])	echo "" ;;
+			4[0-9]|3[0-9])	echo "" ;;
+			*)		echo "" ;;
+		esac
+	fi
+	echo "$(cat /sys/class/power_supply/BAT0/capacity)%"
+
+	echo "$delim"
 
 	# Date and time.
 	date '+%Y %b %d (%a) %I:%M%p'
@@ -91,6 +95,8 @@ update() { \
 	# to prevent some weird issues that cause significant slowing of
 	# everything in dwm. Note entirely sure of the cause, but again, the tr
 	# command easily avoids it.
+	echo "Updated"
+	echo "$(status | tr '\n' ' ')"
 	xsetroot -name "$(status | tr '\n' ' ')" &
     wait
 
@@ -106,6 +112,6 @@ while :; do
     # again. We run sleep in the background and use wait until it finishes,
     # because traps can interrupt wait immediately, but they can't do that
     # with sleep.
-	sleep 1m &
+	sleep 30s &
     wait
 done

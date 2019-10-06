@@ -5,6 +5,7 @@
 .config/mpd/pid
 .config/mpd/state
 .config/mpd/sticker.sql
+.config/mpd/playlists
 .config/ncmpcpp/error.log
 .config/nvim/autoload/*
 .config/nvim/plugged/*
