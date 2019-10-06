@@ -23,6 +23,8 @@ Plug 'tpope/vim-surround'
 Plug 'altercation/vim-colors-solarized'
 Plug 'mileszs/ack.vim'
 Plug 'kien/ctrlp.vim'
+Plug 'mxw/vim-jsx'
+Plug 'posva/vim-vue'
 call plug#end()
 
 set bg=dark
@@ -84,6 +86,10 @@ set clipboard=unnamedplus
 	map <C-j> <C-w>j
 	map <C-k> <C-w>k
 	map <C-l> <C-w>l
+
+" Save file
+	map <leader>w :w<CR>
+
 
 " Check file in shellcheck:
 	map <leader>s :!clear && shellcheck %<CR>
