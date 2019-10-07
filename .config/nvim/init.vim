@@ -22,8 +22,6 @@ Plug 'kovetskiy/sxhkd-vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'mileszs/ack.vim'
 Plug 'kien/ctrlp.vim'
-Plug 'mxw/vim-jsx'
-Plug 'posva/vim-vue'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 call plug#end()
