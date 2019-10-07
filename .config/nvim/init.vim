@@ -24,6 +24,8 @@ Plug 'mileszs/ack.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'mxw/vim-jsx'
 Plug 'posva/vim-vue'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
 call plug#end()
 
 set bg=dark
@@ -39,6 +41,9 @@ set clipboard=unnamedplus
 	syntax on
 	set encoding=utf-8
 	set number relativenumber
+	set ignorecase
+	set smartcase
+	set incsearch
 " Solarized
 	let g:solarized_termtrans=1
 	colorscheme solarized
@@ -139,6 +144,8 @@ set clipboard=unnamedplus
 	autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
 " Update dwmbar when changed.
 	autocmd BufWritePost *dwmbar !kill $(ps aux | grep 'sh' | grep 'dwmbar' | awk '{print $2}') & dwmbar &
+" Update vim when changed
+	autocmd BufWritePost *init.vim :source %
 
 " Ctrl-p Plugin
 	let g:ctrlp_working_path_mode = 0
@@ -146,3 +153,9 @@ set clipboard=unnamedplus
 	map <leader>j :CtrlP<cr>
 	map <c-b> :CtrlPBuffer<cr>
 	let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee\|dist'
+
+" Personal Configuration
+	try
+		source ~/.config/nvim/my_configs.vim
+	catch
+	endtry
