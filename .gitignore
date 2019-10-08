@@ -9,4 +9,5 @@
 .config/ncmpcpp/error.log
 .config/nvim/autoload/*
 .config/nvim/plugged/*
+.config/nvim/my_plugins.vim
 .config/nvim/my_configs.vim

@@ -24,6 +24,10 @@ Plug 'mileszs/ack.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
+try
+	source ~/.config/nvim/my_plugins.vim
+catch
+endtry
 call plug#end()
 
 set bg=dark
@@ -114,7 +118,7 @@ set clipboard=unnamedplus
 
 " Ensure files are read as what I want:
 	let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
-	map <leader>v :VimwikiIndex
+	map <leader>v :VimwikiIndex<cr>
 	let g:vimwiki_list = [{'path': '~/repos/writings', 'syntax': 'markdown', 'ext': '.md'}]
 	autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
 	autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
@@ -143,7 +147,7 @@ set clipboard=unnamedplus
 " Update dwmbar when changed.
 	autocmd BufWritePost *dwmbar !kill $(ps aux | grep 'sh' | grep 'dwmbar' | awk '{print $2}') & dwmbar &
 " Update vim when changed
-	autocmd BufWritePost *init.vim :source %
+	autocmd BufWritePost *.vim :source %
 
 " Ctrl-p Plugin
 	let g:ctrlp_working_path_mode = 0
