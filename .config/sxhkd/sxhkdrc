@@ -13,7 +13,7 @@ super + Return
 super + shift + q
 	kill -9 `xdotool getwindowfocus getwindowpid`
 super + d
-	dmenu_run
+	rofi -show drun
 super + r
 	$TERMINAL -e $FILE
 super + e
@@ -31,7 +31,7 @@ super + v
 super + shift + a
 	$TERMINAL -e pulsemixer; refbar
 super + shift + c
-	mpv --no-osc --no-input-default-bindings --input-conf=/dev/null --title='mpvfloat' /dev/video0
+	mpv --no-osc --no-input-default-bindings --input-conf=/dev/null --title='mpvfloat' --vf=hflip /dev/video0
 super + shift + r
 	refbar
 super + shift + w
