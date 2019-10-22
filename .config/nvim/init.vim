@@ -24,6 +24,7 @@ Plug 'mileszs/ack.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
+Plug 'editorconfig/editorconfig-vim'
 try
 	source ~/.config/nvim/my_plugins.vim
 catch
@@ -66,9 +67,6 @@ set clipboard=unnamedplus
 		set undofile
 	catch
 	endtry
-
-" Goyo plugin makes text more readable when writing prose:
-	map <leader>f :Goyo \| set linebreak<CR>
 
 " Spell-check set to <leader>o, 'o' for 'orthography':
 	map <leader>o :setlocal spell! spelllang=en_us<CR>
