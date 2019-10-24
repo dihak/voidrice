@@ -75,7 +75,9 @@ set clipboard=unnamedplus
 	set splitbelow splitright
 
 " Nerd tree
-	map <leader>n :NERDTreeToggle<CR>
+	map <leader>nn :NERDTreeToggle<CR>
+	map <leader>nf :NERDTreeFind<CR>
+	map <leader>nb :NERDTreeFromBookmark<CR>
 	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " vimling:
