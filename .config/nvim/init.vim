@@ -25,6 +25,9 @@ Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'dense-analysis/ale'
+Plug 'airblade/vim-gitgutter'
 try
 	source ~/.config/nvim/my_plugins.vim
 catch
@@ -146,8 +149,9 @@ set clipboard=unnamedplus
 	autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
 " Update dwmbar when changed.
 	autocmd BufWritePost *dwmbar !kill $(ps aux | grep 'sh' | grep 'dwmbar' | awk '{print $2}') & dwmbar &
-" Update vim when changed
-	autocmd BufWritePost *.vim :source %
+
+" GitGutter Plugin
+	autocmd BufWritePost * GitGutter
 
 " Ctrl-p Plugin
 	let g:ctrlp_working_path_mode = 0
