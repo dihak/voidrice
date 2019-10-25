@@ -53,9 +53,9 @@ super + shift + BackSpace
 super + shift + Escape
 	prompt 'Leave Xorg?' 'killall Xorg'
 super + x
-	ifinstalled slock && ( slock & xset dpms force off ; mpc pause ; pauseallmpv )
+	ifinstalled slock && ( slock & sleep 1; xset dpms force off ; mpc pause ; pauseallmpv )
 XF86Launch1
-	xset dpms force off
+	sleep 1; xset dpms force off
 XF86TouchpadToggle
 	(synclient | grep "TouchpadOff.*1" && synclient TouchpadOff=0)>/dev/null || synclient TouchpadOff=1
 XF86Touchpad{Off,On}
