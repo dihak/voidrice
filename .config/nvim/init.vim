@@ -28,6 +28,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'dense-analysis/ale'
 Plug 'airblade/vim-gitgutter'
+Plug 'jiangmiao/auto-pairs'
 try
 	source ~/.config/nvim/my_plugins.vim
 catch
