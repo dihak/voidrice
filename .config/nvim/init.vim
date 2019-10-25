@@ -99,6 +99,9 @@ set clipboard=unnamedplus
 " Save file
 	map <leader>w :w<CR>
 
+" Switch CWD to the directory of the open buffer
+	map <leader>cd :cd %:p:h<cr>:pwd<cr>
+
 
 " Check file in shellcheck:
 	map <leader>s :!clear && shellcheck %<CR>
@@ -111,7 +114,7 @@ set clipboard=unnamedplus
 	nnoremap S :%s//g<Left><Left>
 
 " Compile document, be it groff/LaTeX/markdown/etc.
-	map <leader>c :w! \| !compiler <c-r>%<CR>
+	map <leader>cp :w! \| !compiler <c-r>%<CR>
 
 " Open corresponding .pdf/.html or preview
 	map <leader>p :!opout <c-r>%<CR><CR>
