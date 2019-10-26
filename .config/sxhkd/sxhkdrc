@@ -77,11 +77,11 @@ super + Delete
 # Pause audio
 super + p
 	mpc toggle
-super + shift + p
+super + shift + s
 	mpc pause; pauseallmpv
 # Changes to next/previous tracks
-#super + {comma,period}
-#	mpc {prev,next}
+super + shift + {p,n}
+	mpc {prev,next}
 # Restart track
 super + shift + less
 	mpc seek 0%
