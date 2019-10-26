@@ -1,5 +1,6 @@
 .config/calcurse/apts
 .config/calcurse/todo
+.config/calcurse/.calcurse.pid
 .config/mpd/database
 .config/mpd/log
 .config/mpd/pid
