@@ -14,6 +14,8 @@ super + shift + q
 	kill -9 `xdotool getwindowfocus getwindowpid`
 super + d
 	rofi -show drun
+super + w
+	rofi -show window
 super + r
 	$TERMINAL -e $FILE
 super + e
