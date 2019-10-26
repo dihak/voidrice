@@ -157,6 +157,9 @@ autocmd BufWritePost *dwmbar !kill $(ps aux | grep 'sh' | grep 'dwmbar' | awk '{
 " GitGutter Plugin
 autocmd BufWritePost * GitGutter
 
+" Fugitive Plugin
+map <leader>g :G<cr>
+
 " Ctrl-p Plugin
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_map = '<c-f>'
