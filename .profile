@@ -35,9 +35,11 @@ export LESS_TERMCAP_ue="$(printf '%b' '[0m')"
 # Android Settings
 export _JAVA_AWT_WM_NONREPARENTING=1
 export ANDROID_HOME=~/Android/Sdk
+export DART_SDK=/opt/flutter/bin/cache/dart-sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$DART_SDK/bin
 
 mpd >/dev/null 2>&1 &
 
