@@ -157,7 +157,7 @@ super + F3
 super + F4
 	prompt 'Hibernate computer?' 'sudo -A systemctl hibernate'
 super + F5
-	sudo sv restart NetworkManager
+	sudo systemctl restart NetworkManager
 # Start torrent daemon/open interface
 super + F6
 	torwrap

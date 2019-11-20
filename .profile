@@ -5,6 +5,7 @@
 # Adds `~/.local/bin` to $PATH
 export PATH="$PATH:$HOME/.local/bin/"
 export PATH="$PATH:$HOME/.config/composer/vendor/bin/"
+export PATH="$PATH:$HOME/.npm-global/bin"
 
 # Default programs:
 export EDITOR="nvim"
