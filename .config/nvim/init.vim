@@ -46,7 +46,7 @@ call plug#end()
 set bg=dark
 set go=a
 set mouse=a
-set nohlsearch
+set hlsearch
 set clipboard=unnamedplus
 
 " Some basics:
@@ -59,6 +59,7 @@ set number relativenumber
 set ignorecase
 set smartcase
 set incsearch
+map <silent> <leader><cr> :noh<cr>
 " Solarized
 let g:solarized_termtrans=1
 colorscheme solarized
