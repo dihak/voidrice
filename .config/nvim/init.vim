@@ -1,10 +1,10 @@
 let mapleader =","
 
 if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
-	echo "Downloading junegunn/vim-plug to manage plugins..."
-	silent !mkdir -p ~/.config/nvim/autoload/
-	silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ~/.config/nvim/autoload/plug.vim
-	autocmd VimEnter * PlugInstall
+    echo "Downloading junegunn/vim-plug to manage plugins..."
+    silent !mkdir -p ~/.config/nvim/autoload/
+    silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ~/.config/nvim/autoload/plug.vim
+    autocmd VimEnter * PlugInstall
 endif
 
 call plug#begin('~/.config/nvim/plugged')
@@ -29,10 +29,18 @@ Plug 'easymotion/vim-easymotion'
 Plug 'dense-analysis/ale'
 Plug 'airblade/vim-gitgutter'
 Plug 'jiangmiao/auto-pairs'
-try
-	source ~/.config/nvim/my_plugins.vim
-catch
-endtry
+" My plugins
+Plug 'mxw/vim-jsx'
+Plug 'posva/vim-vue'
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'wakatime/vim-wakatime'
+Plug 'mattn/emmet-vim'
+Plug 'chiel92/vim-autoformat'
+Plug 'sirver/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'thosakwe/vim-flutter'
+Plug 'kristijanhusak/vim-carbon-now-sh'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 set bg=dark
@@ -55,8 +63,8 @@ set incsearch
 let g:solarized_termtrans=1
 colorscheme solarized
 " Text tab and indent
-set smarttab
 set expandtab
+set smarttab
 set shiftwidth=4
 set tabstop=4
 set ai "Auto indent
@@ -68,10 +76,17 @@ set wildmode=longest,list,full
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " Turn persistent undo on
 try
-	set undodir=/tmp/nvim/undodir
-	set undofile
+    set undodir=/tmp/nvim/undodir
+    set undofile
 catch
 endtry
+
+" Useful mappings for managing tabs
+map <leader>tn :tabnew<cr>
+map <leader>to :tabonly<cr>
+map <leader>tc :tabclose<cr>
+map <leader>tm :tabmove
+map <leader>t<leader> :tabnext
 
 " Spell-check set to <leader>o, 'o' for 'orthography':
 map <leader>o :setlocal spell! spelllang=en_us<CR>
@@ -169,7 +184,51 @@ map <c-b> :CtrlPBuffer<cr>
 let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee\|dist\|build'
 
 " Personal Configuration
-try
-	source ~/.config/nvim/my_configs.vim
-catch
-endtry
+" Auto Format on Save
+noremap <F3> :Autoformat<CR>
+
+" UltiSnips
+let g:UltiSnipsExpandTrigger = "<C-l>"
+let g:UltiSnipsJumpForwardTrigger = "<C-j>"
+let g:UltiSnipsJumpBackwardTrigger = "<C-k>"
+
+" COC
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+" Fix autofix problem of current line
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Flutter
+nnoremap <leader>fa :FlutterRun<cr>
+nnoremap <leader>fq :FlutterQuit<cr>
+nnoremap <leader>fr :FlutterHotReload<cr>
+nnoremap <leader>fR :FlutterHotRestart<cr>
+nnoremap <leader>fD :FlutterVisualDebug<cr>
