@@ -30,6 +30,7 @@ Plug 'dense-analysis/ale'
 Plug 'airblade/vim-gitgutter'
 Plug 'jiangmiao/auto-pairs'
 " My plugins
+Plug 'jwalton512/vim-blade'
 Plug 'mxw/vim-jsx'
 Plug 'posva/vim-vue'
 Plug 'dart-lang/dart-vim-plugin'
