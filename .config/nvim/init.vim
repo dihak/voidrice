@@ -42,6 +42,7 @@ Plug 'honza/vim-snippets'
 Plug 'thosakwe/vim-flutter'
 Plug 'kristijanhusak/vim-carbon-now-sh'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'git-time-metric/gtm-vim-plugin'
 call plug#end()
 
 set bg=dark
@@ -65,13 +66,13 @@ map <silent> <leader><cr> :noh<cr>
 let g:solarized_termtrans=1
 colorscheme solarized
 " Text tab and indent
-set expandtab
-set smarttab
 set shiftwidth=4
 set tabstop=4
-set ai "Auto indent
-set si "Smart indent
-set wrap "Wrap lines
+set smarttab
+set expandtab
+set autoindent
+set smartindent
+set wrap
 " Enable autocompletion:
 set wildmode=longest,list,full
 " Disables automatic commenting on newline:
@@ -171,6 +172,9 @@ autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
 autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
 " Update dwmbar when changed.
 autocmd BufWritePost *dwmbar !kill $(ps aux | grep 'sh' | grep 'dwmbar' | awk '{print $2}') & dwmbar &
+
+" Super Retab
+:command! -range=% -nargs=0 Tab2Space execute '<line1>,<line2>s#^\t\+#\=repeat(" ", len(submatch(0))*' . &ts . ')'
 
 " GitGutter Plugin
 autocmd BufWritePost * GitGutter
