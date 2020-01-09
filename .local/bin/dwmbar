@@ -84,6 +84,11 @@ status() { \
 
 	echo "$delim"
 
+    # Digital Kode
+	echo "DIGITALKODE"
+
+	echo "$delim"
+
 	# Date and time.
 	date '+%Y %b %d (%a) %I:%M%p'
 	}

@@ -43,6 +43,7 @@ Plug 'thosakwe/vim-flutter'
 Plug 'kristijanhusak/vim-carbon-now-sh'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'git-time-metric/gtm-vim-plugin'
+Plug 'joonty/vdebug'
 call plug#end()
 
 set bg=dark
