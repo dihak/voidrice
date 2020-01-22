@@ -44,6 +44,7 @@ Plug 'kristijanhusak/vim-carbon-now-sh'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'git-time-metric/gtm-vim-plugin'
 Plug 'joonty/vdebug'
+Plug 'pangloss/vim-javascript'
 call plug#end()
 
 set bg=dark
@@ -118,14 +119,11 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " Save file
-map <leader>w :w<CR>
+map <leader>s :w<CR>
 
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
-
-" Check file in shellcheck:
-map <leader>s :!clear && shellcheck %<CR>
 
 " Open my bibliography file in split
 map <leader>b :vsp<space>$BIB<CR>
