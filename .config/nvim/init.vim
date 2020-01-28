@@ -23,6 +23,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'mileszs/ack.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'tpope/vim-repeat'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'easymotion/vim-easymotion'
@@ -45,6 +46,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'git-time-metric/gtm-vim-plugin'
 Plug 'joonty/vdebug'
 Plug 'pangloss/vim-javascript'
+Plug 'dbeniamine/cheat.sh-vim'
 call plug#end()
 
 set bg=dark
@@ -68,8 +70,8 @@ map <silent> <leader><cr> :noh<cr>
 let g:solarized_termtrans=1
 colorscheme solarized
 " Text tab and indent
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 set smarttab
 set expandtab
 set autoindent
@@ -161,7 +163,7 @@ autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
 autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo | set bg=light
 
 " Automatically deletes all trailing whitespace on save.
-autocmd BufWritePre * %s/\s\+$//e
+" autocmd BufWritePre * %s/\s\+$//e
 
 " When shortcut files are updated, renew bash and ranger configs with new material:
 autocmd BufWritePost *bmdirs,*bmfiles !shortcuts
