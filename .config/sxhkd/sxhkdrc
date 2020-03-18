@@ -70,6 +70,8 @@ Print
 # Pick screenshot type
 shift + Print
 	maimpick
+shift + super + Print
+	maim -s | xclip -selection clipboard -t image/png
 # Print: Record audio or video; Del: kill recording
 super + Print
 	dmenurecord

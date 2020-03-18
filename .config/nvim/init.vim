@@ -14,7 +14,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'jreybert/vimagit'
 Plug 'LukeSmithxyz/vimling'
-Plug 'vimwiki/vimwiki'
+"Plug 'vimwiki/vimwiki'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'vifm/vifm.vim'
@@ -121,11 +121,13 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " Save file
-map <leader>s :w<CR>
+map <leader>w :w<CR>
+
+" Count file
+map ,c :%s///gn<CR>
 
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
-
 
 " Open my bibliography file in split
 map <leader>b :vsp<space>$BIB<CR>
