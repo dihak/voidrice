@@ -14,7 +14,6 @@ Plug 'junegunn/goyo.vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'jreybert/vimagit'
 Plug 'LukeSmithxyz/vimling'
-"Plug 'vimwiki/vimwiki'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'vifm/vifm.vim'
@@ -31,29 +30,29 @@ Plug 'dense-analysis/ale'
 Plug 'airblade/vim-gitgutter'
 Plug 'jiangmiao/auto-pairs'
 " My plugins
-Plug 'jwalton512/vim-blade'
-Plug 'mxw/vim-jsx'
-Plug 'posva/vim-vue'
-Plug 'dart-lang/dart-vim-plugin'
-Plug 'wakatime/vim-wakatime'
-Plug 'mattn/emmet-vim'
-Plug 'chiel92/vim-autoformat'
-Plug 'sirver/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'thosakwe/vim-flutter'
-Plug 'kristijanhusak/vim-carbon-now-sh'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'git-time-metric/gtm-vim-plugin'
-Plug 'joonty/vdebug'
-Plug 'pangloss/vim-javascript'
-Plug 'dbeniamine/cheat.sh-vim'
+"Plug 'jwalton512/vim-blade'
+"Plug 'mxw/vim-jsx'
+"Plug 'posva/vim-vue'
+"Plug 'dart-lang/dart-vim-plugin'
+"Plug 'wakatime/vim-wakatime'
+"Plug 'mattn/emmet-vim'
+"Plug 'chiel92/vim-autoformat'
+"Plug 'sirver/ultisnips'
+"Plug 'honza/vim-snippets'
+"Plug 'thosakwe/vim-flutter'
+"Plug 'kristijanhusak/vim-carbon-now-sh'
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'git-time-metric/gtm-vim-plugin'
+"Plug 'joonty/vdebug'
+"Plug 'pangloss/vim-javascript'
+"Plug 'dbeniamine/cheat.sh-vim'
 call plug#end()
 
 set bg=dark
 set go=a
 set mouse=a
 set hlsearch
-set clipboard=unnamedplus
+"set clipboard=unnamedplus
 
 " Some basics:
 nnoremap c "_c
